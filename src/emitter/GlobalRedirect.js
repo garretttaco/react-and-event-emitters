@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { withEmitter } from "./Emitter";
 
-class GlobalEmitterRedirect extends Component {
+class GlobalRedirect extends Component {
   state = {
     shouldRedirect: false,
     to: null
@@ -26,4 +26,4 @@ class GlobalEmitterRedirect extends Component {
   }
 }
 
-export default withEmitter(GlobalEmitterRedirect);
+export default withEmitter(GlobalRedirect);

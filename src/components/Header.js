@@ -14,12 +14,22 @@ const Header = styled.header`
   & > h1 {
     display: inline-block;
     width: 50%;
+    & > a {
+      color: ${theme.light};
+    }
   }
   .links {
     display: inline-block;
     text-align: right;
     width: 50%;
   }
+`;
+
+const Pathname = styled.span`
+  color: ${theme.light};
+  font-weight: bold;
+  padding-right: 10px;
+  font-size: 20px;
 `;
 
 export default withRouter(props => {
@@ -29,9 +39,12 @@ export default withRouter(props => {
     .find(value => /emitter|redux/.test(value.toLowerCase()));
   return (
     <Header>
-      <h1>React and Event Emitters</h1>
+      <h1>
+        <Link to="/">React and Event Emitters</Link>
+      </h1>
       {appType && (
         <div className="links">
+          <Pathname>/{appType}</Pathname>
           <DarkButton>
             <Link to={`/${appType}/modal`}>Modal example</Link>
           </DarkButton>

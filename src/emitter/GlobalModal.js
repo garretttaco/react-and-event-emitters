@@ -5,15 +5,19 @@ import Button from "../components/Button";
 
 class GlobalModal extends Component {
   state = { show: false };
+
   componentDidMount() {
     this.props.emitter.on("modal", modalOptions => {
       this.setState({ ...modalOptions, show: true });
     });
   }
+
   handleHide = () => {
+    // Wipe the state clean
     this.state = {};
     this.setState({ show: false });
   };
+
   render() {
     const { title, body, show } = this.state;
     return (
