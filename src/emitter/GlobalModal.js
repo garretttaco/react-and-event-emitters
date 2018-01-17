@@ -13,15 +13,13 @@ class GlobalModal extends Component {
   }
 
   handleHide = () => {
-    // Wipe the state clean
-    this.state = {};
     this.setState({ show: false });
   };
 
   render() {
     const { title, body, show } = this.state;
     return (
-      <Modal {...this.state} show={show} onHide={this.handleHide}>
+      <Modal show={show} onHide={this.handleHide}>
         {title && (
           <Modal.Header closeButton>
             <Modal.Title>{title}</Modal.Title>
